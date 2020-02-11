@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ADARA | 美妝產品</title>
+    <link rel="stylesheet" href="./JS/slick/slick-theme.css">
+    <link rel="stylesheet" href="./JS/slick/slick.css">
+    <link rel="stylesheet" href="./css/product.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="./JS/hamburger.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .on_1 h5 {
+            border-bottom: 1px solid rgb(255, 255, 255);
+        }
+
+        .product_bg {
+            background-color: rgb(245, 245, 245);
+        }
+
+        .product_banner {
+            width: 100%;
+            height: 600px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .banner_a {
+            width: 100%;
+            height: 600px;
+            background-image: url(./img/product_banner.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .banner_wordsA {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+        }
+
+        .banner_b {
+            width: 100%;
+            height: 600px;
+            background-image: url(./img/product_banner2.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .banner_wordsB {
+            position: absolute;
+            top: 43%;
+            left: 25%;
+        }
+
+        .banner_c {
+            width: 100%;
+            height: 600px;
+            background-image: url(./img/product_banner3.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .banner_wordsC {
+            position: absolute;
+            top: 30%;
+            left: 25%;
+        }
+
+        .product_title {
+            width: 1000px;
+            text-align: center;
+            margin: 20px auto 0 auto;
+            border-bottom: 3px solid rgba(183, 22, 73, .7);
+        }
+
+        .item_form {
+            /* border: 1px solid blue; */
+            width: 1140px;
+            margin-left: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: space-around;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        .item_link img {
+            width: 330px;
+        }
+
+        .product_img1 {
+            width: 330px;
+            height: 330px;
+            background-image: url(./img/item11.PNG);
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: all 1s linear 0s;
+        }
+
+        .product_img1:hover {
+            background-image: url(./img/info-1.PNG);
+            background-size: contain;
+        }
+
+        .item_link,
+        .words_link {
+            display: block;
+        }
+
+        .buy_bg1,
+        .buy_bg2 {
+            display: inline-block;
+            margin: 5px 10px 10px 0;
+            padding: 0 5px;
+            background-color: rgb(235, 145, 160);
+        }
+
+        .put_cart {
+            text-align: right;
+        }
+
+        .put_cart .p3 {
+            color: white;
+        }
+
+        .words_link .p2,
+        .price_link .p3 {
+            color: rgba(0, 0, 0, .8);
+        }
+
+        .product_img2 {
+            width: 330px;
+            height: 330px;
+            background-image: url(./img/item2.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: all 1s linear 0s;
+        }
+
+        .product_img2:hover {
+            background-image: url(./img/info-2.PNG);
+            background-size: contain;
+        }
+
+        .product_img3 {
+            width: 330px;
+            height: 330px;
+            background-image: url(./img/item2-2.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: all 1s linear 0s;
+        }
+
+        .product_img3:hover {
+            background-image: url(./img/info-3.PNG);
+            background-size: contain;
+        }
+
+        .all_items {
+            margin-bottom: 50px;
+        }
+
+        .all_items:hover {
+            box-shadow: 0px 0px 5px 1px rgb(246, 174, 126), 0px 0px 5px 1px rgb(246, 174, 126);
+        }
+
+        .page {
+            width: 300px;
+            margin: 0 auto;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        .page_now {
+            font-family: SourceHanSansTC-Light;
+            font-size: 18px;
+            color: rgba(0, 0, 0, .8);
+            margin-right: 4px;
+            letter-spacing: 4px;
+            border-bottom: 2px solid black;
+        }
+
+        .dots {
+            font-family: SourceHanSansTC-Light;
+            font-size: 18px;
+            color: rgba(0, 0, 0, .8);
+            margin-right: 4px;
+        }
+
+        .page a {
+            font-family: SourceHanSansTC-Light;
+            font-size: 18px;
+            text-decoration: none;
+            color: rgb(180, 180, 180);
+            margin-right: 4px;
+        }
+
+        /*----------992px~1200px----------*/
+        @media screen and (min-width:992px) and (max-width:1200px) {
+
+            .product_title,
+            .item_form,
+            .top,
+            .footer_box {
+                width: 960px;
+            }
+        }
+
+        /*----------768px~991px----------*/
+        @media screen and (min-width: 768px) and (max-width:991px) {
+
+            .product_title,
+            .item_form,
+            .top,
+            .footer_box,
+            .link_list {
+                width: 720px;
+            }
+
+            .product_banner,
+            .banner_a,
+            .banner_b,
+            .banner_c {
+                height: 500px;
+            }
+
+            .banner_a {
+                background-position-x: 18%;
+            }
+
+            .banner_b {
+                background-position-x: 27%;
+            }
+
+            .banner_c {
+                background-position-x: 35%;
+            }
+
+            .banner_wordsA {
+                top: 65%;
+            }
+
+            .banner_wordsB {
+                left: 10%;
+            }
+
+            .banner_wordsC {
+                left: 15%;
+            }
+        }
+
+        /*----------...<=767px----------*/
+        @media screen and (max-width:767px) {
+
+            header {
+                position: fixed;
+            }
+
+            .tray {
+                display: block;
+            }
+
+            .top_banner {
+                padding-top: 74.5px;
+            }
+
+            .logo {
+                width: 50px;
+                padding-bottom: 5px;
+            }
+
+            .login a .p3 {
+                font-size: 12px;
+            }
+
+            .cart {
+                width: 18px;
+            }
+
+            nav,
+            .nav,
+            .footer_box ul li .footer_words {
+                display: none;
+            }
+
+            .top,
+            .product_title,
+            .item_form,
+            .footer_box,
+            .page {
+                width: 100%;
+            }
+
+            .product_banner,
+            .banner_a,
+            .banner_b,
+            .banner_c {
+                height: 400px;
+            }
+
+            .banner_a {
+                background-position-x: 65%;
+            }
+
+            .banner_wordsA {
+                top: auto;
+                bottom: 5%;
+            }
+
+            .banner_b {
+                background-position-x: 75%;
+            }
+
+            .banner_wordsB h1 {
+                color: white;
+            }
+
+            .banner_wordsB {
+                left: 8%;
+                top: auto;
+                bottom: 10%;
+            }
+
+            .banner_c {
+                background-position-x: 70%;
+            }
+
+            .banner_wordsC {
+                top: auto;
+                bottom: 10%;
+                left: 10%;
+            }
+
+            .banner_wordsA h1,
+            .banner_wordsB h1,
+            .banner_wordsC h1 {
+                font-size: 24px;
+            }
+
+            .product_title h2 {
+                font-size: 20px;
+            }
+
+            .words_link .p2 {
+                font-size: 16px;
+            }
+
+            .product_img1,
+            .product_img2,
+            .product_img3 {
+                width: 265px;
+                height: 265px;
+            }
+
+            .footer_box ul {
+                display: block;
+            }
+
+            .footer_title .p2 {
+                font-size: 14px;
+            }
+
+            footer {
+                height: auto;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="product_bg">
+        <header>
+            <div class="top">
+                <div class="tray" id="btnHamburger">
+                    <div class="hamburger hamburger--spin">
+                        <div class="hamburger-box">
+                            <div class="hamburger-inner"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo">
+                    <a href="./index.html">
+                        <img src="./img/logo-white.png" alt="">
+                    </a>
+                </div>
+                <div class="login">
+                    <a href="#">
+                        <p class="p3">登入</p>
+                    </a>
+                    <a href="#"><img class="cart" src="./img/shopping-cart-white.png" alt=""></a>
+                </div>
+                <ul class="nav">
+                    <li>
+                        <a class="on_1" href="./product_form.html">
+                            <h5>美妝產品</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="on_2" href="./teach.html">
+                            <h5>美妝教學</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="on_3" href="./fashion.html">
+                            <h5>流行趨勢</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="on_4" href="./about.html">
+                            <h5>關於我們</h5>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="side" id="menu">
+                <ul class="side_box">
+                    <li>
+                        <a class="now sm1" href="./product_form.html">
+                            <h4>美妝產品</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="now sm2" href="./teach.html">
+                            <h4>美妝教學</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="now sm3" href="./fashion.html">
+                            <h4>流行趨勢</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="now sm4" href="./about.html">
+                            <h4>關於我們</h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <nav>
+            <ul class="link_list">
+                <li class="list_box1">
+                    <div class="list_title1">
+                        <a href="./product_form.html">
+                            <h6>唇部彩妝</h6>
+                        </a>
+                        <ul class="sec_box1">
+                            <li class="sec_on"><a href="./product_form.html">口紅</a></li>
+                            <li><a href="./product_form.html">唇釉</a></li>
+                            <li><a href="./product_form.html">唇線筆</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="list_box2">
+                    <div class="list_title2">
+                        <a href="./product_form.html">
+                            <h6>眼部彩妝</h6>
+                        </a>
+                        <ul class="sec_box2">
+                            <li><a href="./product_form.html">眼影</a></li>
+                            <li><a href="./product_form.html">眼線</a></li>
+                            <li><a href="./product_form.html">眼彩盤</a></li>
+                            <li><a href="./product_form.html">睫毛膏</a></li>
+                            <li><a href="./product_form.html">眉彩</a></li>
+                            <li><a href="./product_form.html">眉筆</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="list_box3">
+                    <div class="list_title3">
+                        <a href="./product_form.html">
+                            <h6>臉部彩妝</h6>
+                        </a>
+                        <ul class="sec_box3">
+                            <li><a href="./product_form.html">底妝</a></li>
+                            <li><a href="./product_form.html">粉餅</a></li>
+                            <li><a href="./product_form.html">蜜粉</a></li>
+                            <li><a href="./product_form.html">腮紅</a></li>
+                            <li><a href="./product_form.html">妝前乳</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="list_box4">
+                    <div class="list_title4">
+                        <a href="./product_form.html">
+                            <h6>彩妝工具</h6>
+                        </a>
+                        <ul class="sec_box4">
+                            <li><a href="./product_form.html">眼部刷具</a></li>
+                            <li><a href="./product_form.html">臉部刷具</a></li>
+                            <li><a href="./product_form.html">唇部刷具</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="top_banner">
+            <a href="./product.html">
+                <ul class="product_banner">
+                    <li class="banner_a">
+                        <div class="banner_wordsA">
+                            <h1>一支唇膏，變身優雅大人系</h1>
+                        </div>
+                    </li>
+                    <li class="banner_b">
+                        <div class="banner_wordsB">
+                            <h1>
+                                鎖水持妝零油光<br>平衡調控妝前乳
+                            </h1>
+                        </div>
+                    </li>
+                    <li class="banner_c">
+                        <div class="banner_wordsC">
+                            <h1>
+                                見證零粉感<br>艷夏的極致裸妝
+                            </h1>
+                        </div>
+                    </li>
+                </ul>
+            </a>
+        </section>
+        <section>
+            <div class="product_title">
+                <h2>口紅系列</h2>
+            </div>
+
+            <div class="item_form">
+                <div class="all_items">
+                    <a class="item_link" href="./product.html">
+                        <div class="product_img1"></div>
+                    </a>
+                    <a class="words_link" href="./product.html">
+                        <p class="p2">渲漾水色唇膏-珊瑚(花嫁唇膏)</p>
+                    </a>
+                    <a class="price_link" href="./product.html">
+                        <span class="p3">NT$360</span>
+                    </a>
+                    <div class="put_cart">
+                        <a href="./product.html">
+                            <div class="buy_bg1">
+                                <span class="p3">立即購買</span>
+                            </div>
+                        </a>
+                        <a href="./product.html">
+                            <div class="buy_bg2">
+                                <span class="p3">加入購物車</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="all_items">
+                    <a class="item_link" href="./product.html">
+                        <div class="product_img2"></div>
+                    </a>
+                    <a class="words_link" href="./product.html">
+                        <p class="p2">渲漾水色唇膏-玫紅(花嫁唇膏)</p>
+                    </a>
+                    <a class="price_link" href="./product.html">
+                        <span class="p3">NT$360</span>
+                    </a>
+                    <div class="put_cart">
+                        <a href="./product.html">
+                            <div class="buy_bg1">
+                                <span class="p3">立即購買</span>
+                            </div>
+                        </a>
+                        <a href="./product.html">
+                            <div class="buy_bg2">
+                                <span class="p3">加入購物車</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="all_items">
+                    <a class="item_link" href="./product.html">
+                        <div class="product_img3"></div>
+                    </a>
+                    <a class="words_link" href="./product.html">
+                        <p class="p2">渲漾水色唇膏-杏橙(花嫁唇膏)</p>
+                    </a>
+                    <a class="price_link" href="./product.html">
+                        <span class="p3">NT$360</span>
+                    </a>
+                    <div class="put_cart">
+                        <a href="./product.html">
+                            <div class="buy_bg1">
+                                <span class="p3">立即購買</span>
+                            </div>
+                        </a>
+                        <a href="./product.html">
+                            <div class="buy_bg2">
+                                <span class="p3">加入購物車</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="all_items">
+                    <a class="item_link" href="./product.html">
+                        <div class="product_img1"></div>
+                    </a>
+                    <a class="words_link" href="./product.html">
+                        <p class="p2">渲漾水色唇膏-珊瑚(花嫁唇膏)</p>
+                    </a>
+                    <a class="price_link" href="./product.html">
+                        <span class="p3">NT$360</span>
+                    </a>
+                    <div class="put_cart">
+                        <a href="./product.html">
+                            <div class="buy_bg1">
+                                <span class="p3">立即購買</span>
+                            </div>
+                        </a>
+                        <a href="./product.html">
+                            <div class="buy_bg2">
+                                <span class="p3">加入購物車</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="all_items">
+                    <a class="item_link" href="./product.html">
+                        <div class="product_img2"></div>
+                    </a>
+                    <a class="words_link" href="./product.html">
+                        <p class="p2">渲漾水色唇膏-玫紅(花嫁唇膏)</p>
+                    </a>
+                    <a class="price_link" href="./product.html">
+                        <span class="p3">NT$360</span>
+                    </a>
+                    <div class="put_cart">
+                        <a href="./product.html">
+                            <div class="buy_bg1">
+                                <span class="p3">立即購買</span>
+                            </div>
+                        </a>
+                        <a href="./product.html">
+                            <div class="buy_bg2">
+                                <span class="p3">加入購物車</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="all_items">
+                    <a class="item_link" href="./product.html">
+                        <div class="product_img3"></div>
+                    </a>
+                    <a class="words_link" href="./product.html">
+                        <p class="p2">渲漾水色唇膏-杏橙(花嫁唇膏)</p>
+                    </a>
+                    <a class="price_link" href="./product.html">
+                        <span class="p3">NT$360</span>
+                    </a>
+                    <div class="put_cart">
+                        <a href="./product.html">
+                            <div class="buy_bg1">
+                                <span class="p3">立即購買</span>
+                            </div>
+                        </a>
+                        <a href="./product.html">
+                            <div class="buy_bg2">
+                                <span class="p3">加入購物車</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="all_items">
+                    <a class="item_link" href="./product.html">
+                        <div class="product_img1"></div>
+                    </a>
+                    <a class="words_link" href="./product.html">
+                        <p class="p2">渲漾水色唇膏-珊瑚(花嫁唇膏)</p>
+                    </a>
+                    <a class="price_link" href="./product.html">
+                        <span class="p3">NT$360</span>
+                    </a>
+                    <div class="put_cart">
+                        <a href="./product.html">
+                            <div class="buy_bg1">
+                                <span class="p3">立即購買</span>
+                            </div>
+                        </a>
+                        <a href="./product.html">
+                            <div class="buy_bg2">
+                                <span class="p3">加入購物車</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="all_items">
+                    <a class="item_link" href="./product.html">
+                        <div class="product_img2"></div>
+                    </a>
+                    <a class="words_link" href="./product.html">
+                        <p class="p2">渲漾水色唇膏-玫紅(花嫁唇膏)</p>
+                    </a>
+                    <a class="price_link" href="./product.html">
+                        <span class="p3">NT$360</span>
+                    </a>
+                    <div class="put_cart">
+                        <a href="./product.html">
+                            <div class="buy_bg1">
+                                <span class="p3">立即購買</span>
+                            </div>
+                        </a>
+                        <a href="./product.html">
+                            <div class="buy_bg2">
+                                <span class="p3">加入購物車</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="all_items">
+                    <a class="item_link" href="./product.html">
+                        <div class="product_img3"></div>
+                    </a>
+                    <a class="words_link" href="./product.html">
+                        <p class="p2">渲漾水色唇膏-杏橙(花嫁唇膏)</p>
+                    </a>
+                    <a class="price_link" href="./product.html">
+                        <span class="p3">NT$360</span>
+                    </a>
+                    <div class="put_cart">
+                        <a href="./product.html">
+                            <div class="buy_bg1">
+                                <span class="p3">立即購買</span>
+                            </div>
+                        </a>
+                        <a href="./product.html">
+                            <div class="buy_bg2">
+                                <span class="p3">加入購物車</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section>
+            <div class="page">
+                <div>
+                    <span class="page_now">1</span>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <span class="dots">...</span>
+                    <a href="#">></a>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer_box">
+                <div class="footer_content">
+                    <ul>
+                        <li><a class="footer_title" href="#">
+                                <p class="p2">常見問題</p>
+                            </a></li>
+                        <li><a class="footer_words" href="#">
+                                <p class="p3">訂購須知</p>
+                            </a></li>
+                        <li><a class="footer_words" href="#">
+                                <p class="p3">退貨說明</p>
+                            </a></li>
+                    </ul>
+                    <ul>
+                        <li><a class="footer_title" href="#">
+                                <p class="p2">客服中心</p>
+                            </a></li>
+                        <li><a class="footer_words" href="#">
+                                <p class="p3">客服信箱</p>
+                            </a></li>
+                        <li><a class="footer_words" href="#">
+                                <p class="p3">客服專線</p>
+                            </a></li>
+                    </ul>
+                    <ul>
+                        <li><a class="footer_title" href="#">
+                                <p class="p2">社群連結</p>
+                            </a></li>
+                        <li><a class="footer_words" href="#">
+                                <p class="p3">Facebook</p>
+                            </a></li>
+                        <li><a class="footer_words" href="#">
+                                <p class="p3">Instagram</p>
+                            </a></li>
+                        <li><a class="footer_words" href="#">
+                                <p class="p3">Line</p>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.product_banner').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2500,
+                arrows: false,
+                pauseOnHover: false,
+            });
+        });
+    </script>
+</body>
+
+</html>

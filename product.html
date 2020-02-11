@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ADARA | 美妝產品</title>
+    <link rel="stylesheet" href="./JS/slick/slick-theme.css">
+    <link rel="stylesheet" href="./JS/slick/slick.css">
+    <link rel="stylesheet" href="./css/product.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="./JS/hamburger.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .on_1 h5 {
+            border-bottom: 1px solid rgb(255, 255, 255);
+        }
+
+        .makeup {
+            width: 1140px;
+            height: 630px;
+            margin: 25px auto;
+            /* border: 1px solid blue; */
+            font-size: 0%;
+        }
+
+        .makeup_left {
+            width: 50%;
+            height: 100%;
+            /* border: 1px solid green; */
+            display: inline-block;
+            box-sizing: border-box;
+            vertical-align: top;
+            position: relative;
+        }
+
+        .makeup_left::before {
+            content: "";
+            height: 22%;
+            width: 40%;
+            border-top: 2px solid rgb(240, 89, 117);
+            border-left: 2px solid rgb(240, 89, 117);
+            position: absolute;
+            top: 15%;
+            left: 4%;
+        }
+
+        .makeup_left::after {
+            content: "";
+            height: 22%;
+            width: 40%;
+            border-bottom: 2px solid rgb(240, 89, 117);
+            border-right: 2px solid rgb(240, 89, 117);
+            position: absolute;
+            bottom: 15%;
+            right: 7%;
+            z-index: -1;
+        }
+
+        .makeup_right {
+            width: 50%;
+            height: 100%;
+            /* border: 1px solid red; */
+            background-color: rgb(249, 202, 169);
+            display: inline-block;
+            box-sizing: border-box;
+            vertical-align: top;
+            overflow: scroll;
+            overflow-x: hidden;
+
+        }
+
+
+        /*----------左側----------*/
+
+        .info_box h4 {
+            margin-bottom: 10px;
+        }
+
+        .info_inner {
+            border-left: 2px solid rgba(0, 0, 0, .5);
+            padding-left: 10px;
+            margin-left: 10px;
+        }
+
+        .info_select h6 {
+            display: inline-block;
+        }
+
+        .account_btn {
+            margin: 0 10px;
+        }
+
+        .like {
+            width: 15px;
+            position: absolute;
+            right: 4px;
+            top: 6px;
+            /* vertical-align: middle; */
+        }
+
+        .like_box {
+            width: 60px;
+            display: inline-block;
+            position: relative;
+            border: 1px solid rgb(240, 89, 117);
+            border-radius: 30px;
+        }
+
+        .like_box h6 {
+            cursor: pointer;
+            padding-left: 5px;
+        }
+
+        .info_buy {
+            width: 150px;
+            height: 55px;
+            border-radius: 30px;
+            background-color: rgb(255, 230, 224);
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .info_buy h4 {
+            margin: 12px 0 0 0;
+            color: rgb(206, 48, 48);
+        }
+
+        .info_buy:hover {
+            background-color: rgb(206, 48, 48);
+        }
+
+        .info_buy:hover h4 {
+            color: rgb(255, 230, 224);
+        }
+
+        .select_box {
+            margin: 10px 0;
+        }
+
+        .info_buy {
+            margin-right: 20px;
+        }
+
+        .info_box {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translate(0, -50%);
+        }
+
+        /*----------右側----------*/
+
+        .makeup_right::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        .makeup_right::-webkit-scrollbar-track {
+            border-radius: 10px;
+        }
+
+        .makeup_right::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            box-shadow: inset 0 0 3px 1.3px rgba(0, 0, 0, .3);
+            background-color: rgba(222, 84, 107, .7);
+        }
+
+        .right_box {
+            width: 75%;
+            margin: 20px auto 0 auto;
+        }
+
+        .img_box {
+            width: 100%;
+            margin: 0 auto 15px auto;
+            /* display: flex;
+            flex-wrap: wrap;
+            justify-content: center; */
+        }
+
+        .box_imgA {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .smallPics {
+            width: 100%;
+            position: relative;
+            text-align: center;
+            /* clear: both; */
+            /* display: flex;
+            justify-content: space-between; */
+        }
+
+        .box_img1 {
+            width: 30%;
+            float: left;
+            cursor: pointer;
+        }
+
+        .box_img2 {
+            width: 30%;
+            /* position: absolute;
+            left: 50%;
+            transform: translate(-50%,0); */
+            cursor: pointer;
+        }
+
+        .box_img3 {
+            width: 30%;
+            float: right;
+            cursor: pointer;
+        }
+
+        .makeup_about h4 {
+            text-align: center;
+            border-bottom: 2px solid rgba(183, 22, 73, .6);
+            margin-bottom: 10px;
+        }
+
+        .about_img1,
+        .about_img2,
+        .about_img5 {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .img_box2 {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .about_img3 {
+            width: 49%;
+        }
+
+        .about_img4 {
+            width: 49%;
+            float: right;
+        }
+
+        /*----------推薦商品----------*/
+
+        .makeup_bottom h4 {
+            text-align: center;
+        }
+
+        .bot_title {
+            width: 110px;
+            margin: 40px auto 10px auto;
+            /* border-bottom: 2px solid rgba(0, 0, 0, .5); */
+            background-color: rgba(255, 141, 137, 0.5);
+            box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, .5);
+        }
+
+        .item a {
+            outline: none;
+        }
+
+        .itemPanel {
+            /* border: 1px solid green; */
+            border-top: 1px solid rgba(0, 0, 0, .5);
+            border-bottom: 1px solid rgba(0, 0, 0, .5);
+            width: 1050px;
+            height: 260px;
+            margin: 0 auto 30px auto;
+            padding-top: 5px;
+            position: relative;
+        }
+
+        .slick-prev::before,
+        .slick-next::before {
+            color: rgba(0, 0, 0, .8);
+        }
+
+        .slick-prev {
+            transform: translateX(0);
+            transition: transform 0.5s;
+        }
+
+        .slick-prev:hover {
+            transform: translateX(-10px);
+        }
+
+        .slick-next {
+            transform: translateX(0);
+            transition: transform 0.5s;
+        }
+
+        .slick-next:hover {
+            transform: translateX(10px);
+        }
+
+        .item img {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        .item .p2 {
+            text-align: center;
+        }
+
+        /*----------992px~1200px----------*/
+        @media screen and (min-width:992px) and (max-width:1200px) {
+
+            .top,
+            .footer_box,
+            .makeup {
+                width: 960px;
+            }
+
+            .itemPanel {
+                width: 920px;
+                padding-top: 15px;
+            }
+
+            .info_box {
+                left: 15%;
+            }
+
+        }
+
+        /*----------768px~991px----------*/
+        @media screen and (min-width: 768px) and (max-width:991px) {
+
+            .top,
+            .footer_box,
+            .makeup,
+            .link_list {
+                width: 720px;
+            }
+
+            .bread .p3 {
+                font-size: 14px;
+            }
+
+            .itemPanel {
+                width: 700px;
+                height: 210px;
+                padding-top: 15px;
+            }
+
+            .makeup {
+                height: 500px;
+            }
+
+            .info_box {
+                left: 10%;
+            }
+
+            .info_buy {
+                width: 125px;
+            }
+        }
+
+        /*----------...<=767px----------*/
+        @media screen and (max-width:767px) {
+            header {
+                position: fixed;
+            }
+
+            .tray {
+                display: block;
+            }
+
+            .logo {
+                width: 50px;
+                padding-bottom: 5px;
+            }
+
+            .login a .p3 {
+                font-size: 12px;
+            }
+
+            .cart {
+                width: 18px;
+            }
+
+            nav,
+            .nav,
+            .footer_box ul li .footer_words {
+                display: none;
+            }
+
+            .top,
+            .footer_box,
+            .makeup,
+            .makeup_right,
+            .footer_box {
+                width: 100%;
+            }
+
+            .makeup {
+                padding-top: 74.5px;
+                height: auto;
+                margin: 0;
+            }
+
+            .bread {
+                position: absolute;
+                left: 4%;
+                top: 8px;
+            }
+
+            .bread .p3 {
+                font-size: 12px;
+            }
+
+            .makeup_left {
+                width: 100%;
+                height: 470px;
+                text-align: center;
+            }
+
+            .info_box {
+                position: static;
+                transform: none;
+                text-align: left;
+                margin-top: 110px;
+                /* transform: translate(-50%,-50%); */
+            }
+
+            .makeup_left::before {
+                width: 20%;
+                height: 15%;
+                top: 7%;
+            }
+
+            .makeup_left::after {
+                width: 20%;
+                height: 15%;
+                bottom: 7%;
+                right: 5%;
+            }
+
+            .info_box h4 {
+                font-size: 16px;
+            }
+
+            .select_box h6 {
+                font-size: 14px;
+            }
+
+            .like {
+                top: 4px;
+            }
+
+            .info_buy {
+                width: 100px;
+                height: 40px;
+                margin: 5px 5px;
+            }
+
+            .right_box {
+                width: 90%;
+            }
+
+            .makeup_right::-webkit-scrollbar {
+                display: none;
+            }
+
+            .info_buy h4 {
+                margin: 6px 0 0 0;
+            }
+
+            .makeup_about h4 {
+                font-size: 16px;
+            }
+
+            .itemPanel {
+                width: 80%;
+                height: 160px;
+                padding-top: 15px;
+            }
+
+            .item .p2 {
+                color: rgba(0, 0, 0, .8);
+                font-size: 12px;
+            }
+
+            .slick-prev:hover,
+            .slick-next:hover {
+                transform: none;
+            }
+
+            .footer_box ul {
+                display: block;
+            }
+
+            .footer_title .p2 {
+                font-size: 14px;
+            }
+
+            footer {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="top">
+            <div class="tray" id="btnHamburger">
+                <div class="hamburger hamburger--spin">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./img/logo-white.png" alt="">
+                </a>
+            </div>
+            <div class="login">
+                <a href="#">
+                    <p class="p3">登入</p>
+                </a>
+                <a href="#"><img class="cart" src="./img/shopping-cart-white.png" alt=""></a>
+            </div>
+            <ul class="nav">
+                <li>
+                    <a class="on_1" href="./product_form.html">
+                        <h5>美妝產品</h5>
+                    </a>
+                </li>
+                <li>
+                    <a class="on_2" href="./teach.html">
+                        <h5>美妝教學</h5>
+                    </a>
+                </li>
+                <li>
+                    <a class="on_3" href="./fashion.html">
+                        <h5>流行趨勢</h5>
+                    </a>
+                </li>
+                <li>
+                    <a class="on_4" href="./about.html">
+                        <h5>關於我們</h5>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="side" id="menu">
+            <ul class="side_box">
+                <li>
+                    <a class="now sm1" href="./product_form.html">
+                        <h4>美妝產品</h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="now sm2" href="./teach.html">
+                        <h4>美妝教學</h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="now sm3" href="./fashion.html">
+                        <h4>流行趨勢</h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="now sm4" href="./about.html">
+                        <h4>關於我們</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <nav>
+        <ul class="link_list">
+            <li class="list_box1">
+                <div class="list_title1">
+                    <a href="./product_form.html">
+                        <h6>唇部彩妝</h6>
+                    </a>
+                    <ul class="sec_box1">
+                        <li class="sec_on"><a href="./product_form.html">口紅</a></li>
+                        <li><a href="./product_form.html">唇釉</a></li>
+                        <li><a href="./product_form.html">唇線筆</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="list_box2">
+                <div class="list_title2">
+                    <a href="./product_form.html">
+                        <h6>眼部彩妝</h6>
+                    </a>
+                    <ul class="sec_box2">
+                        <li><a href="./product_form.html">眼影</a></li>
+                        <li><a href="./product_form.html">眼線</a></li>
+                        <li><a href="./product_form.html">眼彩盤</a></li>
+                        <li><a href="./product_form.html">睫毛膏</a></li>
+                        <li><a href="./product_form.html">眉彩</a></li>
+                        <li><a href="./product_form.html">眉筆</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="list_box3">
+                <div class="list_title3">
+                    <a href="./product_form.html">
+                        <h6>臉部彩妝</h6>
+                    </a>
+                    <ul class="sec_box3">
+                        <li><a href="./product_form.html">底妝</a></li>
+                        <li><a href="./product_form.html">粉餅</a></li>
+                        <li><a href="./product_form.html">蜜粉</a></li>
+                        <li><a href="./product_form.html">腮紅</a></li>
+                        <li><a href="./product_form.html">妝前乳</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="list_box4">
+                <div class="list_title4">
+                    <a href="./product_form.html">
+                        <h6>彩妝工具</h6>
+                    </a>
+                    <ul class="sec_box4">
+                        <li><a href="./product_form.html">眼部刷具</a></li>
+                        <li><a href="./product_form.html">臉部刷具</a></li>
+                        <li><a href="./product_form.html">唇部刷具</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="makeup">
+        <div class="makeup_left">
+            <div class="bread">
+                <a href="./product_form.html">
+                    <span class="p3">美妝產品</span>
+                </a>
+                <span class="p3">></span>
+                <a href="./product_form.html">
+                    <span class="p3">唇部彩妝</span>
+                </a>
+                <span class="p3">></span>
+                <a href="./product_form.html">
+                    <span class="p3">口紅</span>
+                </a>
+            </div>
+            <div class="info_box">
+                <h4>ADARA 渲漾水色唇膏-珊瑚</h4>
+                <div class="info_inner">
+                    <p class="p4">規格：3.8g</p>
+                    <p class="p4">原產地：台灣</p>
+                    <p class="p4">淨重：17.5g</p>
+                    <p class="p4">保存環境：室溫</p>
+                    <p class="p4">有效期限：三年</p>
+                </div>
+                <div class="select_box">
+                    <h6>價格：450元</h6>
+                    <div class="info_select">
+                        <h6>數量</h6>
+                        <select class="account_btn" name="account" id="">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <div class="like_box">
+                            <h6 id="collect">收藏</h6>
+                            <img class="like" id="heart" src="./img/like-line.png" alt="" title="加入收藏">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="info_buy">
+                        <a href="#">
+                            <h4>立即購買</h4>
+                        </a>
+                    </div>
+                    <div class="info_buy">
+                        <a href="#">
+                            <h4>加入購物車</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="makeup_right">
+            <div class="right_box">
+                <div class="img_box">
+                    <img class="box_imgA" id="large" src="./img/large/item1.jpg" alt="">
+                    <div class="smallPics">
+                        <img class="box_img1" src="./img/small/item1.jpg" alt="">
+                        <img class="box_img2" src="./img/small/item2.jpg" alt="">
+                        <img class="box_img3" src="./img/small/item11.png" alt="">
+                    </div>
+                </div>
+                <div class="makeup_about">
+                    <h4>產品介紹</h4>
+                    <img class="about_img1" src="./img/item3.jpg" alt="">
+                    <img class="about_img2" src="./img/item4.jpg" alt="">
+                    <div class="img_box2">
+                        <img class="about_img3" src="./img/item8.jpg" alt="">
+                        <img class="about_img4" src="./img/item9.jpg" alt="">
+                    </div>
+                    <img class="about_img5" src="./img/item7.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="makeup_bottom">
+            <div class="bot_title">
+                <h4>推薦商品</h4>
+            </div>
+            <div class="itemPanel">
+                <div class="item">
+                    <a href="#">
+                        <img src="./img/item2-2.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <p class="p2">渲漾水色唇膏-杏橙</p>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <img src="./img/product-1.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <p class="p2">星魅霓光唇膏</p>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <img src="./img/product-2.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <p class="p2">星魅性感睫毛膏</p>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <img src="./img/product-3.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <p class="p2">星魅霓虹眼影</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer_box">
+            <div class="footer_content">
+                <ul>
+                    <li><a class="footer_title" href="#">
+                            <p class="p2">常見問題</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">訂購須知</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">退貨說明</p>
+                        </a></li>
+                </ul>
+                <ul>
+                    <li><a class="footer_title" href="#">
+                            <p class="p2">客服中心</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">客服信箱</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">客服專線</p>
+                        </a></li>
+                </ul>
+                <ul>
+                    <li><a class="footer_title" href="#">
+                            <p class="p2">社群連結</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">Facebook</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">Instagram</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">Line</p>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        //加入收藏 或 取消收藏
+        function switchFavorite() {
+            var heart = document.getElementById("heart");
+            if (heart.title == "加入收藏") {
+                heart.src = "./img/like.png";
+                heart.title = "取消收藏";
+            } else {
+                heart.src = "./img/like-line.png";
+                heart.title = "加入收藏";
+            }
+        }
+
+        function init() {
+            //設定[加入收藏 或 取消收藏]的點按事件
+            document.getElementById("collect").onclick = switchFavorite;
+
+            //點小圖看大圖
+            let smallPics = document.querySelectorAll(".smallPics img");
+            for (let i = 0; i < smallPics.length; i++) {
+                smallPics[i].onclick = showLarge;
+            }
+        }
+        window.onload = init;
+    </script>
+
+    <script>
+        //點小圖看大圖
+        function showLarge(e) {
+            let small = e.target;
+            document.getElementById("large").src = small.src.replace("small", "large");
+        }
+    </script>
+
+    <script type="text/javascript">
+        function $id(id) {
+            return document.getElementById(id);
+        }
+        window.addEventListener("load", function () {
+            let wrap = document.getElementsByClassName("wrap")[0];
+            var curIndex = 0;
+            $id("btnLeft").disabled = true
+            $id("btnLeft").onclick = function (e) {
+                curIndex--;
+                wrap.style.left = (-27 * curIndex) + "%";
+                $id("btnRight").disabled = false;
+                if (curIndex == 0) {
+                    $id("btnLeft").disabled = true;
+                }
+            }
+
+            $id("btnRight").onclick = function (e) {
+                curIndex++;
+                wrap.style.left = (-27 * curIndex) + "%";
+                $id("btnLeft").disabled = false;
+                if (curIndex == 4) {
+                    $id("btnRight").disabled = true;
+                }
+            }
+        })
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js">
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.itemPanel').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                // autoplay: true,
+                autoplaySpeed: 2500,
+                // arrows: false,
+                pauseOnHover: false,
+            });
+        });
+    </script>
+</body>
+
+</html>

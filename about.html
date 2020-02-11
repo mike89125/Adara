@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ADARA | 關於我們</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="./JS/hamburger.js"></script>
+
+
+    <style>
+        body {
+            margin: 0 auto;
+        }
+
+        .on_4 h5 {
+            border-bottom: 1px solid rgb(255, 255, 255);
+        }
+
+        .brand_img1 {
+            width: 100%;
+            height: 650px;
+            background-image: url(./img/about.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom;
+            margin: 0 0 20px 0;
+        }
+
+        .brand {
+            margin-bottom: 40px;
+        }
+
+        .story,
+        .map {
+            width: 1140px;
+            margin: 0 auto;
+        }
+
+        .story h2,
+        .map h2 {
+            width: 85%;
+            margin: 0 auto;
+            text-align: center;
+            border-bottom: 2px solid rgba(0, 0, 0, .4);
+        }
+
+        .brand_text {
+            width: 80%;
+            margin: 0 auto;
+            padding: 0 0 0 15px;
+            border-left: 1px solid rgba(0, 0, 0, .4);
+            /* border-right: 1px solid rgba(0, 0, 0, .4); */
+            /* margin: 20px 0 0 0; */
+        }
+
+        .text_box {
+            margin: 20px 0 0 0;
+        }
+
+        .brand_img2 {
+            width: 100%;
+            height: 650px;
+            background-image: url(./img/store-3.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0 0 20px 0;
+        }
+
+        .map_box {
+            width: 85%;
+            margin: 20px auto 0 auto;
+        }
+
+        iframe {
+            vertical-align: middle;
+        }
+
+        .map_text {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 130px;
+            padding-left: 20px;
+            border-left: 2px solid rgba(0, 0, 0, .5);
+        }
+
+        /*----------992px~1200px----------*/
+
+        @media screen and (min-width:992px) and (max-width:1200px) {
+
+            .top,
+            .footer_box,
+            .story,
+            .map {
+                width: 960px;
+            }
+
+            .brand_img1,
+            .brand_img2 {
+                height: 550px;
+            }
+        }
+
+        /*----------768px~991px----------*/
+
+        @media screen and (min-width: 768px) and (max-width:991px) {
+
+            .top,
+            .footer_box,
+            .story,
+            .map {
+                width: 720px;
+            }
+
+            .brand_img1,
+            .brand_img2 {
+                height: 500px;
+            }
+
+            iframe {
+                width: 300px;
+                height: 300px;
+            }
+
+            .map_text {
+                margin-left: 30px;
+            }
+        }
+
+        /*----------...<=767px----------*/
+
+        @media screen and (max-width:767px) {
+            header {
+                position: fixed;
+            }
+
+            .tray {
+                display: block;
+            }
+
+            .logo {
+                width: 50px;
+                padding-bottom: 5px;
+            }
+
+            .login a .p3 {
+                font-size: 12px;
+            }
+
+            .cart {
+                width: 18px;
+            }
+
+            .nav,
+            .footer_box ul li .footer_words {
+                display: none;
+            }
+
+            .top,
+            .footer_box,
+            .story,
+            .map {
+                width: 100%;
+            }
+
+            .brand {
+                padding-top: 74.5px;
+                margin-bottom: 20px;
+            }
+
+            .brand_img1,
+            .brand_img2 {
+                height: 300px;
+            }
+
+            .story h2,
+            .map h2 {
+                font-size: 20px;
+            }
+
+            .text_box h4,
+            .map_text h4 {
+                font-size: 16px;
+            }
+
+            .text_box .p3,
+            .map_text .p3 {
+                font-size: 12px;
+            }
+
+            .map_text {
+                width: 50%;
+                display: block;
+                margin: 10px auto 0 auto;
+            }
+
+            iframe {
+                width: 100%;
+                height: 200px;
+            }
+
+            .footer_box ul {
+                display: block;
+            }
+
+            .footer_title .p2 {
+                font-size: 14px;
+            }
+
+            footer {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="top">
+            <div class="tray" id="btnHamburger">
+                <div class="hamburger hamburger--spin">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./img/logo-white.png" alt="">
+                </a>
+            </div>
+            <div class="login">
+                <a href="#">
+                    <p class="p3">登入</p>
+                </a>
+                <a href="#"><img class="cart" src="./img/shopping-cart-white.png" alt=""></a>
+            </div>
+            <ul class="nav">
+                <li>
+                    <a class="on_1" href="./product_form.html">
+                        <h5>美妝產品</h5>
+                    </a>
+                </li>
+                <li>
+                    <a class="on_2" href="./teach.html">
+                        <h5>美妝教學</h5>
+                    </a>
+                </li>
+                <li>
+                    <a class="on_3" href="./fashion.html">
+                        <h5>流行趨勢</h5>
+                    </a>
+                </li>
+                <li>
+                    <a class="on_4" href="./about.html">
+                        <h5>關於我們</h5>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="side" id="menu">
+            <ul class="side_box">
+                <li>
+                    <a class="now sm1" href="./product_form.html">
+                        <h4>美妝產品</h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="now sm2" href="./teach.html">
+                        <h4>美妝教學</h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="now sm3" href="./fashion.html">
+                        <h4>流行趨勢</h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="now sm4" href="./about.html">
+                        <h4>關於我們</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="brand">
+        <div class="brand_img1"></div>
+        <div class="story">
+            <h2>品牌故事</h2>
+            <div class="brand_text">
+                <div class="text_box">
+                    <h4>進軍彩妝業，再掀品牌傳奇新頁</h4>
+                    <p class="p3">
+                        一貫的低調優雅以及能夠美化女性體態美的特質，ADARA的彩妝產品，以能修飾、美化臉部輪廓為概念，獨特創新研發出超微服貼粉體，將輕柔、透明、光亮三種粉體，透過高度精緻且細膩的技術完美融合，讓色彩能強烈展現卻兼具乾淨無瑕的透明感，能輕鬆訂製最完美服貼的膚質，瞬間創造出自然輕透出的精緻無瑕妝感。
+                    </p>
+                </div>
+                <div class="text_box">
+                    <h4>超微服貼粉體，訂製完美膚底</h4>
+                    <p class="p3">賦予ADARA彩妝品全新的獨特性，並呈現出前所未見的色彩品味及質材表現。</p>
+                </div>
+                <div class="text_box">
+                    <h4>大師級極致工藝 黑曜岩頂級保養傳奇</h4>
+                    <p class="p3">
+                        位於義大利南方的潘特列拉島，全島因地殼火山運動造就而成的炭黑色岩石，在惡劣氣候與峭壁環境，卻孕育出將近600種植物。原因在蘊含火山能量的土壤中，充滿著黑曜岩礦物質，ADARA
+                        肌膚科學團隊，獨家淬鍊出黑曜岩礦物複合物，經實驗證實，能高效活膚能量，刺激細胞活化新生，重現大自然神奇的修護力量。</p>
+                </div>
+                <div class="text_box">
+                    <h4>香氛系列，擁有全球男女最愛香味</h4>
+                    <p class="p3">香水宛若人們的第一層服裝，與肌膚融為一體，流暢自然的體香更呈現出時尚、精緻的生活態度，展現出獨具的時尚堅持！</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="brand">
+        <div class="brand_img2"></div>
+        <div class="map">
+            <h2>門市資訊</h2>
+            <div class="map_box">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4301.293577536894!2d121.19492394017615!3d24.968075978018728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823c18e3519eb%3A0x102211b2fe598e24!2zMzIw5qGD5ZyS5biC5Lit5aOi5Y2A5Lit5aSn6LevMzAw6Jmf!5e0!3m2!1szh-TW!2stw!4v1570435829373!5m2!1szh-TW!2stw"
+                    width="400" height="400" frameborder="0" style="border:0;" allowfullscreen="">
+                </iframe>
+                <div class="map_text">
+                    <h4>中央店</h4>
+                    <p class="p3">桃園市中壢區中大路300號<br>03-4227151</p>
+                </div>
+            </div>
+
+            <div class="map_box">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.0031035081965!2d121.5622835153787!3d25.033968744445872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abb6da9c9e1f%3A0x1206bcf082fd10a6!2zMTEw5Y-w5YyX5biC5L-h576p5Y2A5L-h576p6Lev5LqU5q61N-iZnw!5e0!3m2!1szh-TW!2stw!4v1570437352459!5m2!1szh-TW!2stw"
+                    width="400" height="400" frameborder="0" style="border:0;" allowfullscreen="">
+                </iframe>
+                <div class="map_text">
+                    <h4>信義店</h4>
+                    <p class="p3">台北市信義區信義路五段7號<br>02-8101-8800</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer_box">
+            <div class="footer_content">
+                <ul>
+                    <li><a class="footer_title" href="#">
+                            <p class="p2">常見問題</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">訂購須知</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">退貨說明</p>
+                        </a></li>
+                </ul>
+                <ul>
+                    <li><a class="footer_title" href="#">
+                            <p class="p2">客服中心</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">客服信箱</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">客服專線</p>
+                        </a></li>
+                </ul>
+                <ul>
+                    <li><a class="footer_title" href="#">
+                            <p class="p2">社群連結</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">Facebook</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">Instagram</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">Line</p>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

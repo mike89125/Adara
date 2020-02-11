@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ADARA | 流行趨勢</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="./JS/hamburger.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .on_3 h5 {
+            border-bottom: 1px solid rgb(255, 255, 255);
+        }
+
+        .new_title {
+            width: 380px;
+            text-align: center;
+            margin: 0 auto 20px auto;
+            padding-top: 20px;
+            border-bottom: 2px solid rgba(0, 0, 0, .5);
+        }
+
+        .title_line {
+            width: 20px;
+            height: 20px;
+            border-left: 2px solid rgba(0, 0, 0, .6);
+            transform-origin: 0% 100%;
+            transform: skew(-30deg, 0deg);
+            margin: 0 auto;
+        }
+
+        .article_big {
+            width: 1140px;
+            margin: 0 auto;
+        }
+
+        .article_big img {
+            width: 100%;
+        }
+
+        .article_box {
+            width: 1140px;
+            margin: 0 auto;
+            font-size: 0;
+        }
+
+        .article_top,
+        .article_mid,
+        .article_bot,
+        .article_final {
+            width: 100%;
+            margin: 300px 0;
+            position: relative;
+        }
+
+        /*第一排*/
+
+        .article_top img {
+            width: 50%;
+        }
+
+        .top_content {
+            width: 50%;
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            z-index: 10;
+        }
+
+        .top_content h2 {
+            display: inline-block;
+            margin-top: 150px;
+        }
+
+        .cover {
+            height: 0;
+            width: 600px;
+            border-bottom: 470px solid white;
+            border-left: 200px solid transparent;
+            border-right: 0px solid transparent;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        /*第二排*/
+        .article_mid {
+            overflow: hidden;
+        }
+
+        .hide_img {
+            width: 90%;
+            margin: 0 auto;
+            display: none;
+        }
+
+        .mid_content {
+            width: 50%;
+            display: inline-block;
+            position: relative;
+            vertical-align: bottom;
+            z-index: 8;
+        }
+
+        .mid_content h1 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .p_box1 {
+            width: 60%;
+            margin: 0 auto 250px auto;
+        }
+
+        .mid_box {
+            width: 50%;
+            display: inline-block;
+            position: relative;
+            vertical-align: bottom;
+            ;
+        }
+
+        .mid_box img {
+            width: 100%;
+        }
+
+        .mid_box h1 {
+            position: absolute;
+            bottom: 0;
+            right: 80px;
+            color: white;
+        }
+
+        .cover2-1 {
+            /* border: 1px solid red; */
+            width: 110%;
+            height: 192px;
+            background-color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+        }
+
+        .cover2-2 {
+            /* border: 1px solid blue; */
+            width: 150%;
+            height: 192px;
+            background-color: white;
+            position: absolute;
+            top: 33%;
+            left: 0;
+            z-index: 5;
+        }
+
+        .cover2-3 {
+            /* border: 1px solid red; */
+            width: 200%;
+            height: 192px;
+            background-color: white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 5;
+        }
+
+
+        /*第三排*/
+
+        .article_bot {
+            overflow: hidden;
+        }
+
+        .article_bot img {
+            width: 50%;
+            vertical-align: bottom;
+        }
+
+        .bot_content {
+            width: 50%;
+            display: inline-block;
+            vertical-align: bottom;
+        }
+
+        .p_box2 {
+            width: 60%;
+            margin: 0 auto 80px 160px;
+        }
+
+        .cover3-1 {
+            width: 100%;
+            height: 194px;
+            background-color: white;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .coverbox_3-2 {
+            width: 100%;
+            height: 194px;
+            position: absolute;
+            left: 0;
+            top: 33%;
+            overflow: hidden;
+        }
+
+        .cover3-2 {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+        }
+
+        .coverbox_3-3 {
+            width: 100%;
+            height: 194px;
+            position: absolute;
+            left: 0;
+            top: 66%;
+            overflow: hidden;
+        }
+
+        .cover3-3 {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+        }
+
+        /*第四排*/
+        .final_box {
+            width: 50%;
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .final_box img {
+            width: 100%;
+        }
+
+        .cover4-1 {
+            width: 100%;
+            height: 570px;
+            background-color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .cover4-2 {
+            width: 100%;
+            height: 570px;
+            background-color: white;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        /*----------Scroll Out----------*/
+
+        /*第一張動畫*/
+        .cover[data-scroll] {
+
+            transition: width 2s;
+        }
+
+        .cover[data-scroll="in"] {
+            width: 50%;
+        }
+
+        .cover[data-scroll="out"] {
+            width: 100%;
+        }
+
+        .top_content h2[data-scroll] {
+            opacity: 0;
+            transition: transform 2s, opacity 3s;
+        }
+
+        .top_content h2[data-scroll="in"] {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .top_content h2[data-scroll="out"] {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+
+        .top_content .p3[data-scroll] {
+            opacity: 0;
+            transition: opacity 2s ease-in 1s;
+        }
+
+        .top_content .p3[data-scroll="in"] {
+            opacity: 1;
+
+        }
+
+        .top_content .p3[data-scroll="out"] {
+            opacity: 0;
+        }
+
+        /*第二張動畫*/
+
+        .cover2-1[data-scroll] {
+            transition: width 2s;
+        }
+
+        .cover2-1[data-scroll="in"] {
+            width: 50%;
+        }
+
+        .cover2-2[data-scroll] {
+            transition: width 2s;
+        }
+
+        .cover2-2[data-scroll="in"] {
+            width: 50%;
+        }
+
+        .cover2-3[data-scroll] {
+            transition: width 2s;
+        }
+
+        .cover2-3[data-scroll="in"] {
+            width: 50%;
+        }
+
+        /*第三張動畫*/
+
+        .cover3-1[data-scroll] {
+            transition: transform 2s;
+        }
+
+        .cover3-1[data-scroll="in"] {
+            transform: translate(0, -100%);
+        }
+
+        .cover3-2[data-scroll] {
+            transition: transform 2s;
+        }
+
+        .cover3-2[data-scroll="in"] {
+            transform: translate(0, -100%);
+        }
+
+        .cover3-3[data-scroll] {
+            transition: transform 2s;
+        }
+
+        .cover3-3[data-scroll="in"] {
+            transform: translate(0, -100%);
+        }
+
+        /*第四張動畫*/
+
+        .cover4-1[data-scroll] {
+            transition: transform 2s;
+        }
+
+        .cover4-1[data-scroll="in"] {
+            transform: translate(-100%, -100%)
+        }
+
+        .cover4-2[data-scroll] {
+            transition: transform 2s;
+        }
+
+        .cover4-2[data-scroll="in"] {
+            transform: translate(100%, 100%)
+        }
+
+        /*----------992px~1200px----------*/
+        @media screen and (min-width:992px) and (max-width:1200px) {
+
+            .top,
+            .footer_box,
+            .article_big,
+            .article_box {
+                width: 960px;
+            }
+
+            .cover {
+                border-bottom: 396px solid white;
+                width: 50%;
+            }
+
+            .cover2-1,
+            .cover2-2,
+            .cover2-3,
+            .cover3-1,
+            .coverbox_3-2,
+            .coverbox_3-3 {
+                height: 162px
+            }
+
+            .mid_box h1 {
+                right: 5%;
+            }
+
+            .cover4-1,
+            .cover4-2 {
+                height: 480px;
+            }
+        }
+
+        /*----------768px~991px----------*/
+        @media screen and (min-width: 768px) and (max-width:991px) {
+
+            .top,
+            .footer_box,
+            .article_big,
+            .article_box {
+                width: 720px;
+            }
+
+            .cover {
+                border-bottom: 297px solid white;
+                width: 50%;
+            }
+
+            .cover2-1,
+            .cover2-2,
+            .cover2-3,
+            .cover3-1,
+            .coverbox_3-2,
+            .coverbox_3-3 {
+                height: 122px;
+            }
+
+            .top_content h2 {
+                margin-top: 0;
+            }
+
+            .p_box1 {
+                margin: 0 auto 150px auto;
+            }
+
+            .mid_box h1 {
+                font-size: 24px;
+                right: 5%;
+            }
+
+            .p_box2 {
+                margin: 0 auto 20px 120px
+            }
+
+            .cover4-1,
+            .cover4-2 {
+                height: 360px;
+            }
+        }
+
+        /*----------...<=767px----------*/
+        @media screen and (max-width:767px) {
+            header {
+                position: fixed;
+            }
+
+            .tray {
+                display: block;
+            }
+
+            .article {
+                padding-top: 74.5px;
+            }
+
+            .logo {
+                width: 50px;
+                padding-bottom: 5px;
+            }
+
+            .login a .p3 {
+                font-size: 12px;
+            }
+
+            .cart {
+                width: 18px;
+            }
+
+            .nav,
+            .footer_box ul li .footer_words {
+                display: none;
+            }
+
+            .top,
+            .footer_box,
+            .article_big,
+            .article_box {
+                width: 100%;
+            }
+
+            .new_title h2 {
+                font-size: 22px;
+            }
+
+            .new_title {
+                width: 270px;
+            }
+
+            .article_top,
+            .article_mid,
+            .article_bot,
+            .article_final {
+                margin: 20px 0;
+            }
+
+            /*第一排*/
+
+            .cover {
+                display: none;
+            }
+
+            .article_top img {
+                width: 90%;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .top_content,
+            .mid_content {
+                width: 90%;
+                display: block;
+                position: static;
+                margin: 0 auto;
+            }
+
+            .top_content h2 {
+                font-size: 20px;
+            }
+
+            .top_content .p3,
+            .p_box1 .p3,
+            .p_box2 .p3 {
+                font-size: 14px;
+            }
+
+            /*第二排*/
+
+            .hide_img {
+                display: block;
+            }
+
+            .top_content h2 {
+                margin-top: 0;
+            }
+
+            .cover2-1,
+            .cover2-2,
+            .cover2-3 {
+                display: none;
+            }
+
+            .p_box1 {
+                width: 100%;
+                margin: 0;
+            }
+
+            .mid_content h1 {
+                display: none;
+                /* position: static;
+                text-align: center; */
+            }
+
+            .mid_box {
+                display: none;
+            }
+
+            /*第三排*/
+            .cover3-1,
+            .coverbox_3-2,
+            .coverbox_3-3 {
+                display: none;
+            }
+
+            .article_bot img {
+                width: 90%;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .bot_content {
+                width: 90%;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .p_box2 {
+                width: 100%;
+                margin: 0;
+            }
+
+            .bot_content h1 {
+                display: none;
+            }
+
+            /*第四排*/
+            .final_box {
+                width: 90%;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .cover4-1,
+            .cover4-2 {
+                display: none;
+            }
+
+            .final_box img {
+                margin: 10px 0;
+            }
+
+            .cover[data-scroll],
+            .top_content h2[data-scroll],
+            .top_content .p3[data-scroll],
+            .cover2-1[data-scroll],
+            .cover2-2[data-scroll],
+            .cover2-3[data-scroll],
+            .cover3-1[data-scroll],
+            .cover3-2[data-scroll],
+            .cover3-3[data-scroll],
+            .cover4-1[data-scroll],
+            .cover4-2[data-scroll] {
+                transition: all 0s;
+            }
+
+            .footer_box ul {
+                display: block;
+            }
+
+            .footer_title .p2 {
+                font-size: 14px;
+            }
+
+            footer {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="top">
+            <div class="tray" id="btnHamburger">
+                <div class="hamburger hamburger--spin">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./img/logo-white.png" alt="">
+                </a>
+            </div>
+            <div class="login">
+                <a href="#">
+                    <p class="p3">登入</p>
+                </a>
+                <a href="#"><img class="cart" src="./img/shopping-cart-white.png" alt=""></a>
+            </div>
+            <ul class="nav">
+                <li>
+                    <a class="on_1" href="./product_form.html">
+                        <h5>美妝產品</h5>
+                    </a>
+                </li>
+                <li>
+                    <a class="on_2" href="./teach.html">
+                        <h5>美妝教學</h5>
+                    </a>
+                </li>
+                <li>
+                    <a class="on_3" href="./fashion.html">
+                        <h5>流行趨勢</h5>
+                    </a>
+                </li>
+                <li>
+                    <a class="on_4" href="./about.html">
+                        <h5>關於我們</h5>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="side" id="menu">
+            <ul class="side_box">
+                <li>
+                    <a class="now sm1" href="./product_form.html">
+                        <h4>美妝產品</h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="now sm2" href="./teach.html">
+                        <h4>美妝教學</h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="now sm3" href="./fashion.html">
+                        <h4>流行趨勢</h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="now sm4" href="./about.html">
+                        <h4>關於我們</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="article">
+        <div class="new_title">
+            <h4>最新話題</h4>
+            <div class="title_line"></div>
+            <h2>紐約時裝周的異彩世界</h2>
+        </div>
+        <div class="article_big">
+            <img src="./img/article-top.jpg" alt="">
+        </div>
+        <div class="article_box">
+            <div class="article_top">
+                <img src="./img/writing4-a.jpg" alt="">
+                <!-- <div class="overlay"></div> -->
+                <div class="top_content">
+                    <h2 data-scroll>COLOUR IS BACK</h2>
+                    <p class="p3" data-scroll>上季時裝周的妝容大多以簡約 bare skin 為主，整個 no makeup makeup
+                        的熱潮好像從未減退，不過隨著紐約時裝周各大品牌所設計的妝容所見，今季的重點落在色彩繽紛的眼影上，品牌也不約而同地以霓虹眼線突出其活力、處於亢奮以及不受規限的風格。娃娃妝、graphic
+                        liner、紅橙色的主場，2020春夏似乎不再 less is more，取而代之是 Euphoria 的世界。</p>
+                </div>
+                <div class="cover" data-scroll></div>
+            </div>
+
+            <div class="article_mid">
+                <img class="hide_img" src="img\writing1-a.jpg" alt="">
+                <div class="cover2-1" data-scroll></div>
+                <div class="cover2-2" data-scroll></div>
+                <div class="cover2-3" data-scroll></div>
+                <div class="mid_content">
+                    <div class="p_box1">
+                        <p class="p3">Christian Siriano 以多色眼影襯托出2020春夏系列的大膽色彩。</p>
+                    </div>
+                    <h1>Makeup by</h1>
+                </div>
+                <div class="mid_box">
+                    <img src="img\writing1-a.jpg" alt="">
+                    <h1>Erin Parsons for<br>Maybelline</h1>
+                </div>
+            </div>
+
+            <div class="article_bot">
+                <div class="cover3-1" data-scroll></div>
+                <div class="coverbox_3-2">
+                    <div class="cover3-2" data-scroll></div>
+                </div>
+                <div class="coverbox_3-3">
+                    <div class="cover3-3" data-scroll></div>
+                </div>
+                <img src="./img/writing3-a.jpg" alt="">
+                <div class="bot_content">
+                    <div class="p_box2">
+                        <p class="p3">
+                            要數色彩最活潑的話，非 Christopher John Rogers 莫屬。
+                        </p>
+                    </div>
+                    <h1>Makeup<br>by<br>Marcelo<br>Gutierrez</h1>
+                </div>
+
+            </div>
+
+            <div class="article_final">
+                <div class="final_box">
+                    <img src="./img/writing1-b.jpg" alt="">
+                    <div class="cover4-1" data-scroll></div>
+                </div>
+                <div class="final_box">
+                    <img src="./img/writing4-b.jpg" alt="">
+                    <div class="cover4-2" data-scroll></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer_box">
+            <div class="footer_content">
+                <ul>
+                    <li><a class="footer_title" href="#">
+                            <p class="p2">常見問題</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">訂購須知</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">退貨說明</p>
+                        </a></li>
+                </ul>
+                <ul>
+                    <li><a class="footer_title" href="#">
+                            <p class="p2">客服中心</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">客服信箱</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">客服專線</p>
+                        </a></li>
+                </ul>
+                <ul>
+                    <li><a class="footer_title" href="#">
+                            <p class="p2">社群連結</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">Facebook</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">Instagram</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">Line</p>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./css/scroll.js"></script>
+    <script>
+        ScrollOut();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+@font-face {
+    font-family: SourceHanSansTC-Regular;
+    src: url(../../font/SourceHanSansTC-Regular.otf);
+}
+
+@font-face {
+    font-family: SourceHanSansTC-Light;
+    src: url(../../font/SourceHanSansTC-Light.otf);
+}
+
+h1 {
+    font-family: SourceHanSansTC-Regular;
+    font-weight: normal;
+    margin: 0;
+    font-size: 36px;
+    letter-spacing: 4px;
+    color: rgba(0, 0, 0, .6);
+    line-height: 47px;
+}
+
+h2 {
+    font-family: SourceHanSansTC-Regular;
+    font-weight: normal;
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: 4px;
+    color: rgba(0, 0, 0, .6);
+}
+
+h3 {
+    font-family: SourceHanSansTC-Regular;
+    font-weight: normal;
+    margin: 0;
+    font-size: 26px;
+    letter-spacing: 4px;
+    color: rgba(0, 0, 0, .6);
+}
+
+h4 {
+    font-family: SourceHanSansTC-Regular;
+    font-weight: normal;
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: 4px;
+    color: rgba(0, 0, 0, .6);
+}
+
+h5 {
+    font-family: SourceHanSansTC-Regular;
+    font-weight: normal;
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: 4px;
+    color: rgba(0, 0, 0, .6);
+}
+
+h6 {
+    font-family: SourceHanSansTC-Regular;
+    font-weight: normal;
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0, .6);
+}
+
+.p1 {
+    font-family: SourceHanSansTC-Light;
+    font-weight: normal;
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 4px;
+    color: rgba(0, 0, 0, .6);
+}
+
+.p2 {
+    font-family: SourceHanSansTC-Light;
+    font-weight: normal;
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: 4px;
+    color: rgba(0, 0, 0, .6);
+}
+
+.p3 {
+    font-family: SourceHanSansTC-Light;
+    font-weight: normal;
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 4px;
+    color: rgba(0, 0, 0, .6);
+}
+
+.p4 {
+    font-family: SourceHanSansTC-Light;
+    font-weight: normal;
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: rgba(0, 0, 0, .7);
+}

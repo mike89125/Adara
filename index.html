@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ADARA | 首頁</title>
+    <link rel="stylesheet" href="./JS/slick/slick-theme.css">
+    <link rel="stylesheet" href="./JS/slick/slick.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./JS/hamburger.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+
+    <style>
+        body {
+            margin: 0;
+            /* overflow-y: hidden; */
+        }
+
+        /*----------Banner----------*/
+
+        .banner {
+            width: 100%;
+            height: 685px;
+            margin: 0 auto;
+            padding: 0;
+            /* background-image: url(./img/index_banner.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative; */
+        }
+
+        .banner_img1 {
+            width: 100%;
+            height: 685px;
+            background-image: url(./img/index_banner.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .banner_words_1 {
+            position: absolute;
+            top: 8%;
+            left: 15%;
+        }
+
+        .banner_img2 {
+            width: 100%;
+            height: 685px;
+            background-image: url(./img/index_banner-2.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .banner_words_2 {
+            position: absolute;
+            bottom: 40%;
+            right: 10%;
+        }
+
+        .banner_img3 {
+            width: 100%;
+            height: 685px;
+            background-image: url(./img/top.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .banner_words_3 {
+            position: absolute;
+            bottom: 50%;
+            left: 65%;
+        }
+
+        /*----------熱門商品----------*/
+
+        .section_title {
+            width: 1140px;
+            margin: 0 auto;
+        }
+
+        .section_words {
+            width: 192px;
+            margin: 0 auto 10px auto;
+            display: block;
+            position: relative;
+            letter-spacing: 16px;
+            padding-bottom: 6px;
+        }
+
+        .section_words::before {
+            content: "";
+            width: 92%;
+            height: 4px;
+            background-color: rgb(235, 94, 97);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .hito_bg {
+            width: 100%;
+            height: 700px;
+            background-color: rgb(176, 97, 84);
+        }
+
+        .hito_content {
+            width: 1140px;
+            height: 100%;
+            /* border: 1px solid blue; */
+            margin: 0 auto;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .hito_item img {
+            width: 360px;
+            /* height: 500px; */
+            box-shadow: 8px 8px 10px 1px rgba(0, 0, 0, 0.25);
+            /* margin-bottom: 3px; */
+        }
+
+        .hito_item.product1 {
+            align-self: flex-start;
+        }
+
+        .hito_item.product2 {
+            align-self: center;
+        }
+
+        .hito_item.product3 {
+            align-self: flex-end;
+        }
+
+        .hito_item p {
+            color: rgba(255, 255, 255, .8);
+            text-align: center;
+            margin: 20px 0 10px 0;
+            position: relative;
+        }
+
+        .hito_item a {
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .hito_item p::before {
+            content: "";
+            width: 2px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, .8);
+            position: absolute;
+            top: -160%;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        .every_section {
+            margin-bottom: 30px
+        }
+
+        /*----------美妝教學----------*/
+
+        .teach_box {
+            width: 100%;
+            height: 700px;
+            /* border: 1px solid red; */
+            font-size: 0;
+            position: relative;
+        }
+
+        .teach_bg1 {
+            width: 50%;
+            height: 100%;
+            /* border: 1px solid blue; */
+            background-color: rgb(248, 116, 132);
+            display: inline-block;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .teach_bg2 {
+            width: 50%;
+            height: 100%;
+            /* border: 1px solid blue; */
+            background-color: rgb(243, 236, 228);
+            display: inline-block;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .teach_img {
+            /* width: 100%; */
+            height: 100%;
+            transform: scale(1, 1);
+            transition: transform 1s ease-out;
+            /* padding-top: 100%; */
+        }
+
+        .teach_img:hover {
+            transform: scale(1.1, 1.1);
+        }
+
+        .teach_left {
+            /* border: 1px solid pink; */
+            width: 570px;
+            height: 570px;
+            font-size: 0;
+            display: inline-block;
+            box-sizing: border-box;
+            vertical-align: top;
+            overflow: hidden;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+
+
+
+        .teach_right {
+            /* border: 1px solid rgb(226, 130, 52); */
+            width: 570px;
+            height: 570px;
+            display: inline-flex;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            vertical-align: top;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+
+        }
+
+        .teach_pics {
+            /* border: 1px solid aqua; */
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .teach_pic_L {
+            width: 45%;
+        }
+
+        .teach_pic_L img {
+            width: 100%;
+        }
+
+        .teach_pic_R {
+            width: 45%;
+        }
+
+        .teach_pic_R img {
+            width: 100%;
+        }
+
+        .teach_text {
+            /* border: 1px solid aqua; */
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border-right: 2px solid rgb(205, 99, 113); */
+            /* border-bottom: 2px solid rgb(205, 99, 113); */
+        }
+
+        .teach_words {
+            width: 93%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 2px solid rgb(246, 116, 113);
+            border-bottom: 2px solid rgb(246, 116, 113);
+        }
+
+        .teach_words p {
+            position: relative;
+        }
+
+        .teach_words p::before {
+            content: '"';
+            position: absolute;
+            top: -50%;
+            left: -15%;
+        }
+
+        .teach_words p::after {
+            content: '"';
+            position: absolute;
+            bottom: -55%;
+            right: -13%;
+        }
+
+        /*----------Banner----------*/
+
+        .mid_banner {
+            width: 100%;
+            height: 400px;
+            background-image: url(./img/mid-banner-2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 3% 0;
+            position: relative;
+        }
+
+        .mid_banner_bg {
+            width: 400px;
+            height: 100px;
+            background-color: rgba(255, 255, 255, .7);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /*----------流行趨勢----------*/
+
+        .fashion_bg {
+            width: 100%;
+            height: 700px;
+            /* background-color: rgb(229, 191, 152); */
+            background-color: rgb(236, 170, 144);
+        }
+
+        .fashion_content {
+            width: 1140px;
+            height: 100%;
+            /* border: 1px solid green; */
+            margin: 0 auto;
+            /* display: flex; */
+            box-sizing: border-box;
+            font-size: 0;
+        }
+
+        .fashion_left {
+            width: 50%;
+            height: 100%;
+            /* border: 1px solid blue; */
+            display: inline-block;
+            box-sizing: border-box;
+            vertical-align: top;
+            position: relative;
+        }
+
+        /*(1)流行趨勢---左上圖片*/
+
+        .fashion_paper1 {
+            width: 100%;
+            height: 47%;
+            box-sizing: border-box;
+            perspective: 2500px;
+            perspective-origin: 0 50%;
+            transform-style: preserve-3d;
+            position: absolute;
+            top: 2%;
+        }
+
+        .fashion_left_item1 {
+            /* border: 1px solid black; */
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .fashion_jump1 {
+            opacity: 0;
+            background-color: rgb(50, 50, 50);
+            height: 100%;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotateY(-90deg);
+            transform-origin: 0% 0%;
+            transition: transform 0.5s, opacity 0.1s 0.5s;
+        }
+
+        .fashion_left_item1:hover .fashion_jump1 {
+            opacity: 1;
+            transform: rotateY(0deg);
+            transition: transform 0.5s, opacity 0.1s;
+        }
+
+        .fashion_img_L1 {
+            width: 100%;
+            transition: transform 0.5s;
+        }
+
+        .fashion_left_item1:hover .fashion_img_L1 {
+            transform: translateX(50%);
+        }
+
+        .fashion_words_L1 {
+            color: white;
+        }
+
+        /*(2)流行趨勢---左下圖片*/
+
+        .fashion_paper2 {
+            width: 100%;
+            height: 47%;
+            box-sizing: border-box;
+            perspective: 2500px;
+            perspective-origin: 100% 50%;
+            transform-style: preserve-3d;
+            position: absolute;
+            bottom: 2%;
+        }
+
+        .fashion_left_item2 {
+            /* border: 1px solid black; */
+            height: 100%;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .fashion_jump2 {
+            opacity: 0;
+            background-color: white;
+            box-shadow: 5px 5px 0px 0px rgb(50, 50, 50) inset, -5px -5px 0px 0px rgb(50, 50, 50) inset;
+            height: 100%;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: rotateY(90deg);
+            transform-origin: 100% 0%;
+            transition: transform 0.5s, opacity 0.1s 0.5s;
+        }
+
+        .fashion_left_item2:hover .fashion_jump2 {
+            opacity: 1;
+            transform: rotateY(0deg);
+            transition: transform 0.5s, opacity 0.1s;
+        }
+
+        .fashion_img_L2 {
+            width: 100%;
+            transition: transform 0.5s;
+        }
+
+        .fashion_left_item2:hover .fashion_img_L2 {
+            transform: translateX(-20%);
+        }
+
+        .fashion_words_L2 {
+            color: rgb(50, 50, 50);
+        }
+
+
+        /*(3)流行趨勢---右邊圖片*/
+
+        .fashion_right {
+            width: 50%;
+            height: 100%;
+            /* border: 1px solid orange; */
+            display: inline-block;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            vertical-align: top;
+        }
+
+        .fashion_right img {
+            width: 100%;
+            transition: transform 0.4s;
+        }
+
+        .fashion_right:hover .fashion_img_R {
+            transform: translateY(-7%);
+        }
+
+        .fashion_jump3 {
+            width: 100%;
+            height: 14%;
+            background-color: rgb(50, 50, 50);
+            transform: translateY(100%);
+            position: absolute;
+            bottom: 0;
+            transition: transform 0.4s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fashion_right:hover .fashion_jump3 {
+            transform: translateY(0);
+        }
+
+        .fashion_words_R {
+            color: white;
+            /* position: absolute;
+            top: 50%;
+            transform: translate(0, -50%); */
+        }
+
+        /*----------門市資訊----------*/
+        .store_bg {
+            /* border: 1px solid blue; */
+            width: 100%;
+            height: 700px;
+            background-color: rgb(250, 104, 99);
+        }
+
+        .store_content {
+            /* border: 1px solid greenyellow; */
+            width: 1140px;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
+        }
+
+        .store_box {
+            width: 45%;
+            height: 100%;
+        }
+
+        .store_img1 {
+            width: 100%;
+            height: 60%;
+            background-image: url(./img/store-1.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .store_name {
+            width: 100%;
+            height: 20%;
+            position: relative;
+        }
+
+        .store_space {
+            width: 10%;
+            height: 100%;
+            background: rgb(197, 44, 47);
+            display: inline-block;
+            position: absolute;
+            left: 5%;
+        }
+
+        .store_name h3 {
+            color: white;
+            display: inline-block;
+            position: absolute;
+            bottom: 20%;
+            left: 22%;
+        }
+
+        .store_name h3::before {
+            content: "";
+            width: 50%;
+            height: 2px;
+            background-color: white;
+            position: absolute;
+            top: 50%;
+            left: -60%;
+            transform: translate(0, -50%);
+        }
+
+        .store_text {
+            width: 100%;
+            height: 100px;
+            /* border: 1px solid white; */
+            position: relative;
+        }
+
+        .store_text .p2 {
+            color: white;
+            position: absolute;
+            top: 40%;
+            left: 27%;
+        }
+
+        .store_text .p2::before {
+            content: "";
+            width: 2px;
+            height: 200%;
+            background-color: white;
+            position: absolute;
+            top: 50%;
+            left: -10%;
+            transform: translate(0, -50%);
+        }
+
+        .store_img2 {
+            width: 100%;
+            height: 60%;
+            background-image: url(./img/store-2.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        /*----------Scroll Out----------*/
+
+        [data-scroll] {
+            opacity: 0;
+            /* transform: translateY(100%); */
+            transition: transform 3s, opacity 3s;
+        }
+
+        [data-scroll="in"] {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        [data-scroll="out"] {
+            opacity: 0;
+            transform: translateY(100%);
+        }
+
+        /*----------992px~1200px----------*/
+        @media screen and (min-width: 992px) and (max-width:1200px) {
+
+            .top,
+            .section_title,
+            .hito_content,
+            .fashion_content,
+            .store_content,
+            .footer_box {
+                width: 960px;
+            }
+
+            .banner,
+            .banner_img1,
+            .banner_img2,
+            .banner_img3 {
+                height: 570px;
+            }
+
+            .banner_words_1 {
+                position: absolute;
+                top: 7%;
+                left: 10%;
+            }
+
+            .banner_words_2 {
+                position: absolute;
+                right: 2%;
+            }
+
+            .hito_item img {
+                width: 310px;
+            }
+
+            .teach_left,
+            .teach_right {
+                width: 480px;
+                height: 480px;
+            }
+
+            .teach_words p::before {
+                top: -30%;
+                left: -7%;
+            }
+
+            .teach_words p::after {
+                bottom: -38%;
+                right: -6%;
+            }
+
+            .fashion_img_L2,
+            .fashion_img_L1 {
+                height: 100%;
+                width: auto;
+            }
+
+            .fashion_left_item1:hover .fashion_img_L1 {
+                transform: translateX(47%);
+            }
+        }
+
+        /*----------768px~991px----------*/
+
+        @media screen and (min-width: 768px) and (max-width:991px) {
+
+            .top,
+            .section_title,
+            .hito_content,
+            .fashion_content,
+            .store_content,
+            .footer_box {
+                width: 720px;
+            }
+
+            .banner,
+            .banner_img1,
+            .banner_img2,
+            .banner_img3 {
+                height: 490px;
+            }
+
+            .hito_bg,
+            .teach_box,
+            .fashion_bg,
+            .store_bg {
+                height: 540px;
+            }
+
+            .banner_words_1 h1,
+            .banner_words_2 h1,
+            .banner_words_3 h1 {
+                font-size: 28px;
+                padding-bottom: 4px;
+                line-height: 32px;
+            }
+
+            .banner_words_1 h4,
+            .banner_words_2 h4,
+            .banner_words_3 h4 {
+                font-size: 17px;
+            }
+
+            .banner_words_2 {
+                position: absolute;
+                right: 2%;
+            }
+
+            .section_words {
+                width: 169PX;
+                font-size: 26px;
+            }
+
+            .hito_item img {
+                width: 225px;
+            }
+
+            .hito_item p {
+                margin: 10px 0 10px 0;
+                font-size: 16px;
+            }
+
+            .hito_item p::before {
+                height: 25px;
+                top: -110%;
+            }
+
+            .teach_left,
+            .teach_right {
+                width: 360px;
+                height: 360px;
+            }
+
+            .teach_left {
+                height: 360px;
+            }
+
+            .teach_words .p1 {
+                font-size: 18px;
+            }
+
+            .teach_words p::before {
+                top: -30%;
+                left: -7%;
+            }
+
+            .teach_words p::after {
+                bottom: -38%;
+                right: -6%;
+            }
+
+            .mid_banner {
+                height: 300px;
+            }
+
+            .mid_banner h3 {
+                font-size: 22px;
+            }
+
+            .fashion_img_L2,
+            .fashion_img_L1 {
+                height: 100%;
+                width: auto;
+            }
+
+            .fashion_left_item1:hover .fashion_img_L1 {
+                transform: translateX(47%);
+            }
+
+            .fashion_words_L1,
+            .fashion_words_L2,
+            .fashion_words_R {
+                font-size: 20px;
+            }
+
+            .store_name h3 {
+                font-size: 22px;
+            }
+
+            .store_text .p2 {
+                font-size: 16px;
+                left: 20%;
+                top: 35%;
+            }
+
+            .store_text .p2::before {
+                height: 170%;
+            }
+
+            .footer_title .p2 {
+                font-size: 16px;
+            }
+
+            .footer_words .p3 {
+                font-size: 14px;
+            }
+        }
+
+        /*----------...<=767px----------*/
+        @media screen and (max-width:767px) {
+
+            header {
+                position: fixed;
+            }
+
+            .tray {
+                display: block;
+            }
+
+            .topbox {
+                padding-top: 74.5px;
+            }
+
+            .logo {
+                width: 50px;
+                padding-bottom: 5px;
+            }
+
+            .login a .p3 {
+                font-size: 12px;
+            }
+
+            .cart {
+                width: 18px;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .top,
+            .section_title,
+            .hito_content,
+            .fashion_content,
+            .store_content,
+            .footer_box {
+                width: 100%;
+            }
+
+            .banner,
+            .banner_img1,
+            .banner_img2,
+            .banner_img3 {
+                height: 450px;
+            }
+
+            .banner_img1 {
+                background-position: center;
+            }
+
+            .banner_img2,
+            .banner_img3 {
+                background-position-x: 10%;
+            }
+
+            .banner_words_1 {
+                top: auto;
+                left: 10%;
+                /* right: 5%; */
+                bottom: 10%;
+            }
+
+            .banner_words_2 {
+                right: auto;
+                left: 10%;
+                bottom: 10%;
+
+            }
+
+            .banner_words_2 h1,
+            .banner_words_2 h4 {
+                color: white;
+            }
+
+            .banner_words_3 {
+                bottom: 5%;
+                left: auto;
+                right: 8%;
+            }
+
+            .banner_words_1 h1,
+            .banner_words_2 h1,
+            .banner_words_3 h1 {
+                font-size: 28px;
+                padding-bottom: 4px;
+                line-height: 32px;
+            }
+
+            .banner_words_1 h4,
+            .banner_words_2 h4,
+            .banner_words_3 h4 {
+                font-size: 16px;
+            }
+
+            .section_words {
+                width: 144PX;
+                font-size: 20px;
+            }
+
+            .hito_item img {
+                width: 70%;
+            }
+
+            .hito_content {
+                flex-wrap: wrap;
+                text-align: center;
+            }
+
+            .hito_bg {
+                height: auto;
+            }
+
+            .hito_item p {
+                margin: 10px 0 10px 0;
+                font-size: 16px;
+            }
+
+            .hito_item p::before {
+                height: 25px;
+                top: -110%;
+            }
+
+            .hito_item.product1,
+            .hito_item.product2,
+            .hito_item.product3 {
+                align-self: auto;
+            }
+
+            [data-scroll] {
+                transition: transform 0s;
+            }
+
+            .teach_box {
+                height: auto;
+            }
+
+            .teach_bg1 {
+                display: block;
+                width: 100%;
+                height: 450px;
+            }
+
+            .teach_bg2 {
+                display: block;
+                width: 100%;
+                height: 400px;
+            }
+
+            .teach_left {
+                display: block;
+                width: 80%;
+                height: auto;
+                text-align: center;
+                top: 50%;
+                left: 50%;
+                right: auto;
+                transform: translate(-50%, -50%);
+            }
+
+            .teach_img {
+                height: 400px;
+                /* height: auto; */
+                width: auto;
+            }
+
+            .teach_img:hover {
+                transform: none;
+            }
+
+            .teach_right {
+                display: flex;
+                margin: 0 auto;
+                width: 70%;
+                height: auto;
+                top: 50%;
+                left: 50%;
+                right: auto;
+                transform: translate(-50%, -50%);
+            }
+
+            .teach_pics {
+                flex-wrap: wrap;
+            }
+
+            .teach_pic_L,
+            .teach_pic_R {
+                width: 45%;
+            }
+
+            .teach_text {
+                padding: 15px 0;
+            }
+
+            .teach_words .p1 {
+                font-size: 14px;
+                padding: 0 0 10px 0;
+            }
+
+            .teach_words p::before,
+            .teach_words p::after {
+                display: none;
+            }
+
+            .mid_banner {
+                height: 250px;
+                background-attachment: unset;
+            }
+
+            .mid_banner_bg {
+                width: 70%;
+                height: 80px;
+            }
+
+            .mid_banner h3 {
+                font-size: 16px;
+            }
+
+            .fashion_bg {
+                height: auto;
+            }
+
+            .fashion_left {
+                width: 90%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .fashion_paper1,
+            .fashion_paper2 {
+                position: static;
+                height: auto;
+                padding: 10px 0 5px 0;
+            }
+
+            .fashion_img_L2,
+            .fashion_img_L1 {
+                width: 100%;
+                display: block;
+            }
+
+            .fashion_jump1,
+            .fashion_jump2 {
+                width: 100%;
+                background-color: rgb(50, 50, 50);
+                opacity: 1;
+                transform: rotateY(0deg);
+                transition: none;
+                position: static;
+                display: block;
+            }
+
+            .fashion_jump2 {
+                box-shadow: none;
+            }
+
+            .fashion_left_item1:hover .fashion_jump1,
+            .fashion_left_item2:hover .fashion_jump2 {
+                /* display: none; */
+                transition: none;
+            }
+
+            .fashion_left_item1:hover .fashion_jump1,
+            .fashion_left_item2:hover .fashion_jump2,
+            .fashion_left_item1:hover .fashion_img_L1,
+            .fashion_left_item2:hover .fashion_img_L2 {
+                transform: none;
+            }
+
+            .fashion_words_L2 {
+                color: white;
+            }
+
+            .fashion_words_L1,
+            .fashion_words_L2,
+            .fashion_words_R {
+                font-size: 16px;
+                text-align: center;
+            }
+
+            .fashion_right {
+                width: 90%;
+                padding: 10px 0;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .fashion_right img,
+            .fashion_jump3 {
+                transition: none;
+            }
+
+            .fashion_right:hover .fashion_img_R,
+            .fashion_jump3 {
+                transform: none;
+            }
+
+            .fashion_jump3 {
+                height: 48px;
+                position: static;
+            }
+
+
+            .store_bg {
+                height: auto;
+            }
+
+            .store_content {
+                flex-wrap: wrap;
+            }
+
+            .store_box {
+                width: 90%;
+                height: 435px
+            }
+
+            .store_img1,
+            .store_img2 {
+                height: 285px;
+            }
+
+            .store_name h3 {
+                font-size: 18px;
+            }
+
+            .store_text {
+                height: auto;
+                text-align: center;
+            }
+
+            .store_text .p2 {
+                font-size: 16px;
+                position: static;
+                margin: 0 auto;
+                /* top: auto;
+                left: 50%;
+                transform: translate(-50%,0) */
+            }
+
+            .store_text .p2::before {
+                display: none;
+            }
+
+            footer {
+                height: auto;
+            }
+
+            .footer_box ul {
+                display: block;
+            }
+
+            .footer_box ul li .footer_words {
+                display: none;
+            }
+
+            .footer_title .p2 {
+                font-size: 14px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="top">
+            <div class="tray" id="btnHamburger">
+                <div class="hamburger hamburger--spin">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./img/logo-white.png" alt="">
+                </a>
+            </div>
+            <div class="login">
+                <a href="#">
+                    <p class="p3">登入</p>
+                </a>
+                <a href="#"><img class="cart" src="./img/shopping-cart-white.png" alt=""></a>
+            </div>
+            <ul class="nav">
+                <li>
+                    <a class="on_1" href="./product_form.html">
+                        <h5>美妝產品</h5>
+                    </a>
+                </li>
+                <li>
+                    <a class="on_2" href="./teach.html">
+                        <h5>美妝教學</h5>
+                    </a>
+                </li>
+                <li>
+                    <a class="on_3" href="./fashion.html">
+                        <h5>流行趨勢</h5>
+                    </a>
+                </li>
+                <li>
+                    <a class="on_4" href="./about.html">
+                        <h5>關於我們</h5>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="side" id="menu">
+            <ul class="side_box">
+                <li>
+                    <a class="now sm1" href="./product_form.html">
+                        <h4>美妝產品</h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="now sm2" href="./teach.html">
+                        <h4>美妝教學</h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="now sm3" href="./fashion.html">
+                        <h4>流行趨勢</h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="now sm4" href="./about.html">
+                        <h4>關於我們</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <section class="every_section topbox">
+        <a href="./product.html">
+            <ul class="banner">
+                <li class="banner_img1">
+                    <div class="banner_words_1">
+                        <h1>透亮晶瑩</h1>
+                        <h4>層次發色，唇光持續綻放。</h4>
+                    </div>
+                </li>
+                <li class="banner_img2">
+                    <div class="banner_words_2">
+                        <h1>耀眼的淨透光澤</h1>
+                        <h4>經典女人味，<br>展現清純而誘人的紅唇魅力。</h4>
+                    </div>
+                </li>
+                <li class="banner_img3">
+                    <div class="banner_words_3">
+                        <h1>高附著力、<br>果凍粉底誕生</h1>
+                        <h4>瞬間，就擁有美麗的肌膚。</h4>
+                    </div>
+                </li>
+            </ul>
+        </a>
+    </section>
+    <section class="every_section">
+        <div class="section_title">
+            <h2 class="section_words">熱門商品</h2>
+        </div>
+        <div class="hito_bg">
+            <div class="hito_content">
+                <div class="hito_item product1" data-scroll>
+                    <a href="./product.html">
+                        <img src="./img/hito-1.jpg" alt="">
+                        <p class="p2">多色眼影彩盤</p>
+                    </a>
+                </div>
+                <div class="hito_item product2" data-scroll>
+                    <a href="./product.html">
+                        <img src="./img/hito-2.jpg" alt="">
+                        <p class="p2">珠光閃耀打亮盤</p>
+                    </a>
+                </div>
+                <div class="hito_item product3" data-scroll>
+                    <a href="./product.html">
+                        <img src="./img/hito-3.jpg" alt="">
+                        <p class="p2">珊瑚粉紅光-霧感唇釉</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="every_section">
+        <div class="section_title">
+            <h2 class="section_words">美妝教學</h2>
+        </div>
+        <div class="teach_box">
+            <div class="teach_bg1">
+                <div class="teach_left">
+                    <a href="./teach.html">
+                        <img class="teach_img" src="./img/teach.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="teach_bg2">
+                <div class="teach_right">
+                    <div class="teach_pics">
+                        <div class="teach_pic_L">
+                            <a href="./teach.html">
+                                <img src="./img/teach-2.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="teach_pic_R">
+                            <a href="./teach.html">
+                                <img src="./img/teach-3.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="teach_text">
+                        <div class="teach_words">
+                            <p class="p1">5分鐘極速出門<br>3步完成秋日杏橘閃爍眼妝<br>配上柔和橘系唇色甜美度滿分</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="every_section">
+        <div class="mid_banner">
+            <a href="./product.html">
+                <div class="mid_banner_bg">
+                    <h3>#Full Of Charm<br>打造不同的甜美系彩妝</h3>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="every_section">
+        <div class="section_title">
+            <h2 class="section_words">時尚趨勢</h2>
+        </div>
+        <div class="fashion_bg">
+            <div class="fashion_content">
+                <div class="fashion_left">
+                    <a href="./article.html">
+                        <div class="fashion_paper1">
+                            <div class="fashion_left_item1">
+                                <img class="fashion_img_L1" src="./img/news2.jpg" alt="">
+                                <div class="fashion_jump1">
+                                    <h3 class="fashion_words_L1">回顧2010<br>標誌性美容趨勢</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./article.html">
+                        <div class="fashion_paper2">
+                            <div class="fashion_left_item2">
+                                <img class="fashion_img_L2" src="./img/news3.jpg" alt="">
+                                <div class="fashion_jump2">
+                                    <h3 class="fashion_words_L2">紐約時裝周<br>的異彩世界</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <a href="./article.html">
+                    <div class="fashion_right">
+                        <img class="fashion_img_R" src="./img/news1.jpg" alt="">
+                        <div class="fashion_jump3">
+                            <h3 class="fashion_words_R">2019春夏米蘭時裝周</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="every_section">
+        <div class="section_title">
+            <h2 class="section_words">門市資訊</h2>
+        </div>
+        <div class="store_bg">
+            <div class="store_content">
+                <div class="store_box">
+                    <div class="store_name">
+                        <div class="store_space"></div>
+                        <a href="./about.html">
+                            <h3>中央店</h3>
+                        </a>
+                    </div>
+                    <a href="./about.html">
+                        <div class="store_img1"></div>
+                    </a>
+                    <div class="store_text">
+                        <a href="./about.html">
+                            <p class="p2">桃園市中壢區中大路300號<br>03-4227151</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="store_box">
+                    <div class="store_name">
+                        <div class="store_space"></div>
+                        <a href="./about.html">
+                            <h3>信義店</h3>
+                        </a>
+                    </div>
+                    <a href="./about.html">
+                        <div class="store_img2"></div>
+                    </a>
+                    <div class="store_text">
+                        <a href="./about.html">
+                            <p class="p2">台北市信義區信義路五段7號<br>02-8101-8800</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer_box">
+            <div class="footer_content">
+                <ul>
+                    <li><a class="footer_title" href="#">
+                            <p class="p2">常見問題</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">訂購須知</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">退貨說明</p>
+                        </a></li>
+                </ul>
+                <ul>
+                    <li><a class="footer_title" href="#">
+                            <p class="p2">客服中心</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">客服信箱</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">客服專線</p>
+                        </a></li>
+                </ul>
+                <ul>
+                    <li><a class="footer_title" href="#">
+                            <p class="p2">社群連結</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">Facebook</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">Instagram</p>
+                        </a></li>
+                    <li><a class="footer_words" href="#">
+                            <p class="p3">Line</p>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./css/scroll.js"></script>
+    <script>
+        ScrollOut();
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js">
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.banner').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2500,
+                arrows: false,
+                pauseOnHover: false,
+            });
+        });
+    </script>
+</body>
+
+</html>
